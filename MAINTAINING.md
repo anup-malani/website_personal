@@ -66,8 +66,9 @@ Then update the website repo's `_bibliography/papers.bib` to point at the new fi
 ## Adding a new dated CV release (manual workflow)
 
 ```bash
-# 1. Compile main_sorted.tex from the Overleaf folder
-cd "/Users/amalani/UChicago Law Dropbox/Anup Malani/Apps/Overleaf/Resume"
+# 1. Compile main_sorted.tex from the cv repo
+cd ~/github/cv
+git pull --ff-only
 latexmk -pdf -interaction=nonstopmode main_sorted.tex
 
 # 2. Mint the dated filename (current YYMM, e.g. 2604 for April 2026)
@@ -98,7 +99,7 @@ git push
 
 - `git` and `gh` CLI configured for the `anup-malani` GitHub account
 - TeX Live 2024 with `latexmk` for the CV side (`/Library/TeX/texbin/`)
-- The Overleaf-synced LaTeX source lives in Dropbox at `~/UChicago Law Dropbox/Anup Malani/Apps/Overleaf/Resume/`
+- The CV LaTeX source lives in the [`anup-malani/cv`](https://github.com/anup-malani/cv) repo, cloned at `~/github/cv/`. Overleaf imports from that repo (read-only).
 
 ## See also
 
